@@ -1,6 +1,6 @@
 # Yet Another Template
 
-This template created by me uses some of the most useful tools I use in my daily basis at work. I've created this so I can bootstrap "unpading coding challenges for interviews" as quickly as possible. No one deserves to be dragged into the boilerplate hell it is when you only want to apply for a better position.
+This template created by me uses some of the most useful tools I use in my daily basis at work. I've created this so I can bootstrap "unpaid coding challenges for interviews" as quickly as possible. No one deserves to be dragged into the boilerplate hell it is when you only want to apply for a better position.
 
 ## What does it use?
 
