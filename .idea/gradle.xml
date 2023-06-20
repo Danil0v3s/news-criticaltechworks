@@ -29,6 +29,7 @@
             <option value="$PROJECT_DIR$/network" />
             <option value="$PROJECT_DIR$/network/core" />
             <option value="$PROJECT_DIR$/network/news" />
+            <option value="$PROJECT_DIR$/techcrunch" />
           </set>
         </option>
       </GradleProjectSettings>
