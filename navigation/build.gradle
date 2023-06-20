@@ -1,0 +1,21 @@
+plugins {
+    id("com.android.library")
+    id("kotlin-android")
+}
+
+android {
+    buildFeatures {
+        compose true
+    }
+}
+
+dependencies {
+    implementation(projects.core.ui)
+    implementation(projects.feature.main.ui)
+
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.navigation.compose)
+
+    debugImplementation(libs.bundles.androidx.compose.debug)
+    implementation(libs.bundles.androidx.compose)
+}

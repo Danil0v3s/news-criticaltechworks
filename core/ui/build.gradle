@@ -1,0 +1,19 @@
+plugins {
+    id("com.android.library")
+    id("kotlin-android")
+}
+
+android {
+    buildFeatures {
+        compose true
+    }
+}
+
+dependencies {
+    api(libs.androidx.navigation.commonktx)
+
+    api(libs.accompanist.navigation.animation)
+
+    debugImplementation(libs.bundles.androidx.compose.debug)
+    implementation(libs.bundles.androidx.compose)
+}

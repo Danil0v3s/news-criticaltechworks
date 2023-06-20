@@ -1,0 +1,67 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath libs.android.gradle
+
+        classpath libs.kotlin.gradle
+        classpath libs.kotlin.androidExtensions
+
+        classpath libs.androidx.navigation.safeargs
+        classpath libs.hilt.gradle
+    }
+}
+
+plugins {
+    alias(libs.plugins.spotless)
+}
+
+subprojects {
+    apply plugin: "com.diffplug.spotless"
+    apply from: "$rootDir/spotless.gradle"
+
+    afterEvaluate { project ->
+        if (project.hasProperty("android")) {
+            android {
+                compileSdk libs.versions.androidsdk.compile.get().toInteger()
+                defaultConfig {
+                    minSdk libs.versions.androidsdk.min.get().toInteger()
+                    targetSdk libs.versions.androidsdk.target.get().toInteger()
+                }
+
+                compileOptions {
+                    coreLibraryDesugaringEnabled true
+                    sourceCompatibility JavaVersion.VERSION_11
+                    targetCompatibility JavaVersion.VERSION_11
+                }
+
+                composeOptions {
+                    kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler.get()
+                }
+            }
+
+            dependencies {
+                coreLibraryDesugaring libs.coreLibraryDesugaring
+            }
+        }
+    }
+
+    tasks.withType(KotlinCompile).configureEach {
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_11.toString()
+
+            freeCompilerArgs += [
+                    "-opt-in=kotlin.ExperimentalStdlibApi",
+                    "-opt-in=kotlin.time.ExperimentalTime",
+                    "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+                    "-opt-in=kotlinx.coroutines.FlowPreview",
+                    "-opt-in=kotlin.contracts.ExperimentalContracts"
+            ]
+        }
+    }
+}

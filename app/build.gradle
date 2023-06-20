@@ -1,0 +1,90 @@
+plugins {
+    id("com.android.application")
+    id("kotlin-android")
+    id("kotlin-kapt")
+    alias(libs.plugins.ksp)
+    id("dagger.hilt.android.plugin")
+}
+
+android {
+    namespace 'br.com.firstsoft.controlarr'
+    compileSdk libs.versions.androidsdk.compile.get().toInteger()
+
+    defaultConfig {
+        applicationId "br.com.firstsoft.controlarr"
+        minSdk libs.versions.androidsdk.min.get().toInteger()
+        targetSdk libs.versions.androidsdk.target.get().toInteger()
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler.get()
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+    /**
+     * Accompanist
+     */
+    implementation(libs.accompanist.systemuicontroller)
+
+    /**
+     * AndroidX
+     */
+    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.androidx.lifecycle.runtime)
+
+    /**
+     * Compose
+     */
+    debugImplementation(libs.bundles.androidx.compose.debug)
+    implementation(libs.bundles.androidx.compose)
+
+    /**
+     * Hilt
+     */
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    /**
+     * Projects
+     */
+    implementation(projects.core.common)
+    implementation(projects.core.network.api)
+    implementation(projects.core.network.impl)
+    implementation(projects.core.preferences.api)
+    implementation(projects.core.preferences.impl)
+    implementation(projects.core.ui)
+    implementation(projects.core.usecase)
+    implementation(projects.feature.main.ui)
+    implementation(projects.feature.home.ui)
+    implementation(projects.navigation)
+}

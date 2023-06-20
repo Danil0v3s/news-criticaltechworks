@@ -1,0 +1,28 @@
+plugins {
+    id("com.android.library")
+    id("kotlin-android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
+}
+
+android {
+    buildFeatures {
+        compose true
+    }
+}
+
+dependencies {
+    implementation(projects.core.ui)
+
+    debugImplementation(libs.bundles.androidx.compose.debug)
+    implementation(libs.bundles.androidx.compose)
+
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.lifecycle.common)
+    implementation(libs.androidx.lifecycle.runtime)
+
+    implementation(libs.coil)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+}

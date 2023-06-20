@@ -1,0 +1,11 @@
+plugins {
+    id("com.android.library")
+    id("kotlin-android")
+    alias(libs.plugins.ksp)
+}
+
+dependencies {
+    api(libs.androidx.datastore)
+
+    api(libs.coroutines)
+}

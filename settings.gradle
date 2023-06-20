@@ -1,0 +1,32 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "App"
+
+// Type-safe dependency accessors
+// https://docs.gradle.org/7.0/userguide/declaring_dependencies.html#sec:type-safe-project-accessors
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+include ':app'
+include ':core:common'
+include ':core:network:api'
+include ':core:network:impl'
+include ':core:preferences:api'
+include ':core:preferences:impl'
+include ':core:ui'
+include ':core:usecase'
+include ':navigation'
+include ':feature:home:ui'
+include ':feature:main:ui'

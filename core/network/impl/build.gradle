@@ -1,0 +1,20 @@
+plugins {
+    id("com.android.library")
+    id("kotlin-android")
+    id("kotlin-kapt")
+    alias(libs.plugins.ksp)
+}
+
+dependencies {
+    implementation(projects.core.network.api)
+    implementation(projects.core.preferences.api)
+
+    implementation(libs.moshi)
+    ksp(libs.moshi.codegen)
+
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
+
+    implementation(libs.okhttp.loggingInterceptor)
+    implementation(libs.retrofit.moshi)
+}
