@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="apikey" translatable="false">0398470fba9e443eb0951a4262437bd6</string>
+    <string name="source" translatable="false">abc-news</string>
+</resources>

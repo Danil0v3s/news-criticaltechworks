@@ -13,7 +13,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "App"
+rootProject.name = "NewsApp"
 
 // Type-safe dependency accessors
 // https://docs.gradle.org/7.0/userguide/declaring_dependencies.html#sec:type-safe-project-accessors
@@ -21,12 +21,14 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include ':app'
 include ':core:common'
-include ':core:network:api'
-include ':core:network:impl'
 include ':core:preferences:api'
 include ':core:preferences:impl'
 include ':core:ui'
 include ':core:usecase'
-include ':navigation'
 include ':feature:home:ui'
 include ':feature:main:ui'
+include ':feature:news:api'
+include ':navigation'
+include ':network:news'
+include ':network:core'
+include ':feature:news:impl'

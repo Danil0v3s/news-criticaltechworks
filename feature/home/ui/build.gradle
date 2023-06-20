@@ -13,6 +13,7 @@ android {
 
 dependencies {
     implementation(projects.core.ui)
+    implementation(projects.feature.news.api)
 
     debugImplementation(libs.bundles.androidx.compose.debug)
     implementation(libs.bundles.androidx.compose)

@@ -78,13 +78,15 @@ dependencies {
      * Projects
      */
     implementation(projects.core.common)
-    implementation(projects.core.network.api)
-    implementation(projects.core.network.impl)
+    implementation(projects.network.core)
+    implementation(projects.network.news)
     implementation(projects.core.preferences.api)
     implementation(projects.core.preferences.impl)
     implementation(projects.core.ui)
     implementation(projects.core.usecase)
     implementation(projects.feature.main.ui)
     implementation(projects.feature.home.ui)
+    implementation(projects.feature.news.api)
+    implementation(projects.feature.news.impl)
     implementation(projects.navigation)
 }

@@ -12,9 +12,6 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/common" />
-            <option value="$PROJECT_DIR$/core/network" />
-            <option value="$PROJECT_DIR$/core/network/api" />
-            <option value="$PROJECT_DIR$/core/network/impl" />
             <option value="$PROJECT_DIR$/core/preferences" />
             <option value="$PROJECT_DIR$/core/preferences/api" />
             <option value="$PROJECT_DIR$/core/preferences/impl" />
@@ -25,7 +22,13 @@
             <option value="$PROJECT_DIR$/feature/home/ui" />
             <option value="$PROJECT_DIR$/feature/main" />
             <option value="$PROJECT_DIR$/feature/main/ui" />
+            <option value="$PROJECT_DIR$/feature/news" />
+            <option value="$PROJECT_DIR$/feature/news/api" />
+            <option value="$PROJECT_DIR$/feature/news/impl" />
             <option value="$PROJECT_DIR$/navigation" />
+            <option value="$PROJECT_DIR$/network" />
+            <option value="$PROJECT_DIR$/network/core" />
+            <option value="$PROJECT_DIR$/network/news" />
           </set>
         </option>
       </GradleProjectSettings>
