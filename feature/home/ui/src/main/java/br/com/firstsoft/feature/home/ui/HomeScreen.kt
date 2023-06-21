@@ -14,10 +14,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -57,8 +59,9 @@ private fun HomeView(state: HomeState, onItemSelected: (Article) -> Unit) {
 
 @Composable
 private fun ContentView(state: HomeState, onItemSelected: (Article) -> Unit) {
-    Text(text = state.source.orEmpty(), style = MaterialTheme.typography.h1)
-    Spacer(modifier = Modifier.height(24.dp))
+    TopAppBar(title = {
+        Text(text = stringResource(id = R.string.source_name), style = MaterialTheme.typography.h1)
+    })
 
     if (state.articles.isEmpty()) {
         Text(text = "No articles found")
@@ -101,14 +104,20 @@ private fun ItemsColumn(state: HomeState, onItemSelected: (Article) -> Unit) {
                         modifier = Modifier.padding(8.dp)
                     ) {
                         Text(text = item.title, style = MaterialTheme.typography.h2)
-                        Text(text = item.description.orEmpty(), style = MaterialTheme.typography.body1)
+                        Text(
+                            text = item.description.orEmpty(),
+                            style = MaterialTheme.typography.body1
+                        )
                         Spacer(modifier = Modifier.height(16.dp))
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
                             Text(text = item.author, style = MaterialTheme.typography.body2)
-                            Text(text = item.publishedAt.toString(), style = MaterialTheme.typography.body2)
+                            Text(
+                                text = item.publishedAt.toString(),
+                                style = MaterialTheme.typography.body2
+                            )
                         }
                     }
                 }

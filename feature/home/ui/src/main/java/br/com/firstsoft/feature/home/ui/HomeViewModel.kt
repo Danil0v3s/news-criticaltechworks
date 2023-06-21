@@ -40,12 +40,10 @@ class HomeViewModel @Inject constructor(
             }
 
             is Result.Success -> {
-                val source = result.value.firstOrNull()?.source?.name
                 _state.update {
                     it.copy(
                         loading = false,
                         articles = result.value.sortedBy { article -> article.publishedAt },
-                        source = source
                     )
                 }
             }
@@ -56,7 +54,6 @@ class HomeViewModel @Inject constructor(
 data class HomeState(
     val loading: Boolean = false,
     val articles: List<Article> = emptyList(),
-    val source: String? = null,
     val error: Error? = null
 ) {
     data class Error(val code: String, val message: String)
