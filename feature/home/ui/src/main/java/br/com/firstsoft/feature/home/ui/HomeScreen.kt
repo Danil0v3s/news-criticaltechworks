@@ -91,6 +91,7 @@ private fun ItemsColumn(state: HomeState, onItemSelected: (Article) -> Unit) {
             ) {
                 Column {
                     AsyncImage(
+                        modifier = Modifier.fillMaxWidth(),
                         model = item.urlToImage,
                         contentScale = ContentScale.FillWidth,
                         contentDescription = null
