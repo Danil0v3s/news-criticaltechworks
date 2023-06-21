@@ -1,5 +1,11 @@
 plugins {
-    id("kotlin")
+    id("com.android.library")
+    id("kotlin-parcelize")
+    id("kotlin-android")
+}
+
+android {
+    namespace("br.com.firstsoft.feature.news.api")
 }
 
 dependencies {

@@ -15,22 +15,27 @@ import androidx.core.view.WindowCompat
 import br.com.firstsoft.controlarr.navigation.AppNavGraph
 import br.com.firstsoft.core.ui.ControlArrTheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.squareup.moshi.Moshi
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var moshi: Moshi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
-            MainApp()
+            MainApp(moshi)
         }
     }
 }
 
 @Composable
-fun MainApp() {
+fun MainApp(moshi: Moshi) {
     val systemUiController = rememberSystemUiController()
     val useDarkIcons = !isSystemInDarkTheme()
 
@@ -47,13 +52,7 @@ fun MainApp() {
             modifier = Modifier,
             color = MaterialTheme.colors.background
         ) {
-            AppNavGraph()
+            AppNavGraph(moshi)
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    MainApp()
 }

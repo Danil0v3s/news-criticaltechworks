@@ -13,6 +13,7 @@ dependencies {
     api(libs.retrofit.core)
 
     implementation(libs.moshi)
+    implementation(libs.moshi.reflection)
     kapt(libs.moshi.codegen)
 
     implementation(libs.hilt)

@@ -5,6 +5,7 @@ import br.com.firstsoft.core.network.interceptor.ApiKeyInterceptor
 import com.slack.eithernet.ApiResultCallAdapterFactory
 import com.slack.eithernet.ApiResultConverterFactory
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -45,6 +46,7 @@ internal object NetworkModule {
         // factories: Set<@JvmSuppressWildcards JsonAdapter.Factory>,
         // @MoshiAdapter moshiAdapters: Set<@JvmSuppressWildcards Any>,
     ): Moshi = Moshi.Builder()
+        .add(KotlinJsonAdapterFactory())
         .add(InstantJsonAdapter)
         // .apply { adapters.forEach { add(it) } }
         // .apply { factories.forEach { add(it) } }

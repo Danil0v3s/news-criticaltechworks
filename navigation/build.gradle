@@ -12,10 +12,14 @@ android {
 dependencies {
     implementation(projects.core.ui)
     implementation(projects.feature.main.ui)
+    implementation(projects.feature.detail.ui)
+    implementation(projects.feature.news.api)
 
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.navigation.compose)
 
     debugImplementation(libs.bundles.androidx.compose.debug)
     implementation(libs.bundles.androidx.compose)
+
+    implementation(libs.moshi)
 }

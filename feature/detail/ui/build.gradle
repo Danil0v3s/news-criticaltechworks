@@ -6,6 +6,7 @@ plugins {
 }
 
 android {
+    namespace("br.com.firstsoft.feature.detail")
     buildFeatures {
         compose true
     }
@@ -13,17 +14,16 @@ android {
 
 dependencies {
     implementation(projects.core.ui)
-    implementation(projects.feature.home.ui)
     implementation(projects.feature.news.api)
 
-    implementation(libs.accompanist.pager)
-    implementation(libs.accompanist.pager.indicators)
     debugImplementation(libs.bundles.androidx.compose.debug)
     implementation(libs.bundles.androidx.compose)
 
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.lifecycle.common)
     implementation(libs.androidx.lifecycle.runtime)
+
+    implementation(libs.coil)
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)

@@ -2,10 +2,13 @@ package br.com.firstsoft.feature.home.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import br.com.firstsoft.core.common.Result
+import br.com.firstsoft.feature.news.api.model.Article
 import br.com.firstsoft.feature.news.api.usecase.FetchHeadlinesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -25,10 +28,36 @@ class HomeViewModel @Inject constructor(
     }
 
     private suspend fun fetchLibrary() {
-        fetchHeadlinesUseCase(FetchHeadlinesUseCase.Input(""))
+        _state.update { HomeState(loading = true) }
+        when (val result = fetchHeadlinesUseCase(FetchHeadlinesUseCase.Input(""))) {
+            is Result.Failure -> _state.update {
+                HomeState(
+                    error = HomeState.Error(
+                        "31337",
+                        "Something went wrong"
+                    )
+                )
+            }
+
+            is Result.Success -> {
+                val source = result.value.firstOrNull()?.source?.name
+                _state.update {
+                    it.copy(
+                        loading = false,
+                        articles = result.value.sortedBy { article -> article.publishedAt },
+                        source = source
+                    )
+                }
+            }
+        }
     }
 }
 
 data class HomeState(
-    val queueItems: List<String> = emptyList(),
-)
+    val loading: Boolean = false,
+    val articles: List<Article> = emptyList(),
+    val source: String? = null,
+    val error: Error? = null
+) {
+    data class Error(val code: String, val message: String)
+}

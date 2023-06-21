@@ -74,6 +74,8 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
 
+    implementation(libs.moshi)
+
     /**
      * Projects
      */
@@ -84,8 +86,9 @@ dependencies {
     implementation(projects.core.preferences.impl)
     implementation(projects.core.ui)
     implementation(projects.core.usecase)
-    implementation(projects.feature.main.ui)
+    implementation(projects.feature.detail.ui)
     implementation(projects.feature.home.ui)
+    implementation(projects.feature.main.ui)
     implementation(projects.feature.news.api)
     implementation(projects.feature.news.impl)
     implementation(projects.navigation)
