@@ -26,4 +26,9 @@ dependencies {
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+
+    testImplementation(libs.turbine)
+    testImplementation(libs.kotlin.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.coroutines.test)
 }
