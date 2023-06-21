@@ -16,6 +16,6 @@ fun DetailScreen(article: Article) {
             .fillMaxSize()
             .systemBarsPadding()
     ) {
-       Text(text = article.title, style = MaterialTheme.typography.h1)
+        Text(text = article.title, style = MaterialTheme.typography.h1)
     }
 }

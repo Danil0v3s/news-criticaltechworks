@@ -10,7 +10,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 import br.com.firstsoft.controlarr.navigation.AppNavGraph
 import br.com.firstsoft.core.ui.ControlArrTheme

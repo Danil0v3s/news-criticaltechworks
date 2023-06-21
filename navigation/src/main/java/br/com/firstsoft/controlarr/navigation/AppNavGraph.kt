@@ -1,11 +1,9 @@
 package br.com.firstsoft.controlarr.navigation
 
-import android.net.Uri
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.core.os.bundleOf
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
@@ -45,7 +43,8 @@ fun AppNavGraph(
                 navArgument("article") {
                     type = NavType.StringType
                 }
-            )) {
+            )
+        ) {
             val articleJson = it.arguments?.getString("article")
 
             if (articleJson == null) {
