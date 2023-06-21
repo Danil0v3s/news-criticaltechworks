@@ -91,5 +91,7 @@ dependencies {
     implementation(projects.feature.main.ui)
     implementation(projects.feature.news.api)
     implementation(projects.feature.news.impl)
+    implementation(projects.feature.security.api)
+    implementation(projects.feature.security.impl)
     implementation(projects.navigation)
 }

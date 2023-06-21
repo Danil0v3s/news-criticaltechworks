@@ -11,7 +11,7 @@ android {
 
 dependencies {
     implementation(projects.core.ui)
-    implementation(projects.feature.main.ui)
+    implementation(projects.feature.home.ui)
     implementation(projects.feature.detail.ui)
     implementation(projects.feature.news.api)
 

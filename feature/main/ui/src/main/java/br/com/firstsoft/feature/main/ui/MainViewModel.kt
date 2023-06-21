@@ -53,5 +53,5 @@ class MainViewModel @Inject constructor() : ViewModel() {
 
 data class MainState(
     val pages: List<ComposableScreen> = emptyList(),
-    val currentPageIndex: Int = 0
+    val currentPageIndex: Int = 0,
 )

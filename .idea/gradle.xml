@@ -27,6 +27,9 @@
             <option value="$PROJECT_DIR$/feature/news" />
             <option value="$PROJECT_DIR$/feature/news/api" />
             <option value="$PROJECT_DIR$/feature/news/impl" />
+            <option value="$PROJECT_DIR$/feature/security" />
+            <option value="$PROJECT_DIR$/feature/security/api" />
+            <option value="$PROJECT_DIR$/feature/security/impl" />
             <option value="$PROJECT_DIR$/navigation" />
             <option value="$PROJECT_DIR$/network" />
             <option value="$PROJECT_DIR$/network/core" />

@@ -9,7 +9,7 @@ import androidx.navigation.NavType
 import androidx.navigation.navArgument
 import br.com.firstsoft.core.ui.animatedComposable
 import br.com.firstsoft.feature.detail.ui.DetailScreen
-import br.com.firstsoft.feature.main.ui.MainScreen
+import br.com.firstsoft.feature.home.ui.HomeScreen
 import br.com.firstsoft.feature.news.api.model.Article
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
@@ -28,11 +28,11 @@ fun AppNavGraph(
 ) {
     AnimatedNavHost(
         navController = navController,
-        startDestination = Screen.Main.route,
+        startDestination = Screen.Home.route,
         modifier = modifier
     ) {
-        animatedComposable(route = Screen.Main.route) {
-            MainScreen(onItemSelected = {
+        animatedComposable(route = Screen.Home.route) {
+            HomeScreen(onItemSelected = {
                 val article = moshi.adapter<Article>().toJson(it)
                 navController.navigate(Screen.Detail.route.replace("{article}", article))
             })

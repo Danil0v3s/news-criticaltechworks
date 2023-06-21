@@ -132,6 +132,9 @@ coil = "io.coil-kt:coil-compose:2.2.2"
 # Workmanager
 workManager = "androidx.work:work-runtime-ktx:2.7.1"
 
+#biometrics
+biometric = "androidx.biometric:biometric:1.2.0-alpha05"
+
 # Test dependencies
 junit = "junit:junit:4.12"
 mockk = "io.mockk:mockk:1.12.4"

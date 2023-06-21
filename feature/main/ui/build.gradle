@@ -15,9 +15,14 @@ dependencies {
     implementation(projects.core.ui)
     implementation(projects.feature.home.ui)
     implementation(projects.feature.news.api)
+    implementation(projects.feature.security.api)
+    implementation(projects.navigation)
+
+    implementation(libs.moshi)
 
     implementation(libs.accompanist.pager)
     implementation(libs.accompanist.pager.indicators)
+    implementation(libs.accompanist.systemuicontroller)
     debugImplementation(libs.bundles.androidx.compose.debug)
     implementation(libs.bundles.androidx.compose)
 
