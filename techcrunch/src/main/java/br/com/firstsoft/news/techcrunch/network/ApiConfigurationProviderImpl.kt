@@ -1,8 +1,8 @@
-package br.com.firstsoft.techcrunch.network
+package br.com.firstsoft.news.techcrunch.network
 
 import android.content.Context
-import br.com.firstsoft.controlarr.R
 import br.com.firstsoft.core.network.ApiConfigurationProvider
+import br.com.firstsoft.news.techcrunch.R
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

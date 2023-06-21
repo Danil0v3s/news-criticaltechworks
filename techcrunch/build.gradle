@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace 'br.com.firstsoft.controlarr'
+    namespace 'br.com.firstsoft.news.techcrunch'
     compileSdk libs.versions.androidsdk.compile.get().toInteger()
 
     defaultConfig {

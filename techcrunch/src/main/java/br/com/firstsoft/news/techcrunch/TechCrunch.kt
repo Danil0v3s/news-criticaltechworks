@@ -1,4 +1,4 @@
-package br.com.firstsoft.techcrunch
+package br.com.firstsoft.news.techcrunch
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

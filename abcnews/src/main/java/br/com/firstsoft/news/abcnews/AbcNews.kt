@@ -1,7 +1,7 @@
-package br.com.firstsoft.controlarr
+package br.com.firstsoft.news.abcnews
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class ControlArr : Application()
+class AbcNews : Application()

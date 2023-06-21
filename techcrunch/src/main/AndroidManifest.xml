@@ -9,10 +9,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name="br.com.firstsoft.techcrunch.TechCrunch"
+        android:name=".TechCrunch"
         android:theme="@style/Theme.NewsApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".TechCrunchActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.NewsApp">

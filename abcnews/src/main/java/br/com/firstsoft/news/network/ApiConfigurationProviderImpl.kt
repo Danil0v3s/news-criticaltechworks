@@ -1,8 +1,8 @@
-package br.com.firstsoft.controlarr.network
+package br.com.firstsoft.news.network
 
 import android.content.Context
-import br.com.firstsoft.controlarr.R
 import br.com.firstsoft.core.network.ApiConfigurationProvider
+import br.com.firstsoft.news.abcnews.R
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

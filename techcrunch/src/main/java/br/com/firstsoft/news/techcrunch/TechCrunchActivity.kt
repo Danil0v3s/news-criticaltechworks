@@ -1,4 +1,4 @@
-package br.com.firstsoft.controlarr
+package br.com.firstsoft.news.techcrunch
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -19,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity : ComponentActivity() {
+class TechCrunchActivity : ComponentActivity() {
 
     @Inject
     lateinit var moshi: Moshi

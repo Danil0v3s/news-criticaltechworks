@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace 'br.com.firstsoft.controlarr'
+    namespace 'br.com.firstsoft.news.abcnews'
     compileSdk libs.versions.androidsdk.compile.get().toInteger()
 
     defaultConfig {
-        applicationId "br.com.firstsoft.controlarr"
+        applicationId "br.com.firstsoft.news.abcnews"
         minSdk libs.versions.androidsdk.min.get().toInteger()
         targetSdk libs.versions.androidsdk.target.get().toInteger()
         versionCode 1
